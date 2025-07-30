@@ -26,6 +26,7 @@ public class CallableRunner{
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		
 		ExecutorService task = Executors.newFixedThreadPool(2);
+	}
 		
 		Future<String> welcome = task.submit(new CallableTask1("Sagar"));
 		
@@ -33,9 +34,9 @@ public class CallableRunner{
 //		this will not execute to execute this we need to store in variable and use the .get() mehtod
 		
 		
-		task.submit(new CallableTask1("User1"));
-		task.submit(new CallableTask1("User2"));
-		task.submit(new CallableTask1("User3"));
+//		task.submit(new CallableTask1("User1"));
+//		task.submit(new CallableTask1("User2"));
+//		task.submit(new CallableTask1("User3"));
 
 	
 		String message = welcome.get();

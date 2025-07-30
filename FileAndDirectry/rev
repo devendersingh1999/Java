@@ -1,0 +1,70 @@
+import java.nio.file.*;
+
+1. ✅ Create a Directory
+
+Files.createDirectories(Paths.get("data", "logs"));  // Creates data/logs if it doesn’t exist
+
+
+
+ 2. ✅ Create & Write to a File
+Path file = Paths.get("data", "logs", "log.txt");
+Files.writeString(file, "First line\n", StandardOpenOption.CREATE);
+
+3. ✅ Append to a File
+Files.writeString(file, "Another line\n", StandardOpenOption.APPEND);
+
+4. ✅ Read from a File
+List<String> lines = Files.readAllLines(file);
+lines.forEach(System.out::println);
+
+5. ✅ Delete a File
+Files.deleteIfExists(file);
+
+ 6. ✅ List All Files in a Directory
+Files.list(Paths.get("data", "logs"))
+     .filter(Files::isRegularFile)
+     .forEach(System.out::println);
+
+7. ✅ Walk Through a Directory Recursively
+Files.walk(Paths.get("data"))
+     .forEach(System.out::println);
+
+ 8. ✅ Move or Rename a File
+Path source = Paths.get("data", "logs", "log.txt");
+Path target = Paths.get("data", "logs", "archived_log.txt");
+Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
+
+9. ✅ Copy a File
+Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+
+10. ✅ Check If File/Directory Exists
+Path file = Paths.get("data", "logs", "log.txt");
+if (Files.exists(file)) {
+    System.out.println("File exists!");
+}
+
+
+✅ Summary: Recommended Usage
+
+
+| Task             | Method                         |
+| ---------------- | ------------------------------ |
+| Create Path      | `Paths.get(...)`               |
+| Create Directory | `Files.createDirectories(...)` |
+| Write String     | `Files.writeString(...)`       |
+| Read Lines       | `Files.readAllLines(...)`      |
+| Delete           | `Files.deleteIfExists(...)`    |
+| List files       | `Files.list(...)`              |
+| Recursive        | `Files.walk(...)`              |
+| Move             | `Files.move(...)`              |
+| Copy             | `Files.copy(...)`              |
+
+
+
+
+
+
+
+
+
+

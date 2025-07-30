@@ -26,14 +26,14 @@ class CallableTask implements Callable<String> {
 
 public class InvokeAllCallable {
 
-	public static void main(String[] args) throws InterruptedException, ExecutionException {
+	public static void main(String[] args) throws InterruptedException {
 
 //		here we create the fixed thread
 		ExecutorService task = Executors.newFixedThreadPool(3);
 
 //		here we adding the values 
 		List<CallableTask> execute = List.of(new CallableTask("DEV"), new CallableTask("Sagar"),
-				new CallableTask("Akash"), new CallableTask("Rohit"), new CallableTask("Hashit"));
+				                new CallableTask("Akash"), new CallableTask("Rohit"), new CallableTask("Hashit"));
 
 //		the future interface expection some values task.invokeAll() method 
 //		                                invoking all the threads which is created in (task)
