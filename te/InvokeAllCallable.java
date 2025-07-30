@@ -26,7 +26,7 @@ class CallableTask implements Callable<String> {
 
 public class InvokeAllCallable {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, ExecutionException {
 
 //		here we create the fixed thread
 		ExecutorService task = Executors.newFixedThreadPool(3);
