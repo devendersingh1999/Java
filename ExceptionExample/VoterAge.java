@@ -2,9 +2,10 @@ package ExceptionExample;
 
 class InvalidAgeException extends Exception {
 	
-
+//	class constuctor
 	public InvalidAgeException (String msg) {
-		
+//		sending the message to exception class	
+
 		super(msg);
 	}
 }
