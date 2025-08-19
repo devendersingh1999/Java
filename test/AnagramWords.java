@@ -23,9 +23,9 @@ public static void main(String[] args) {
 		hmap.computeIfAbsent(sort, k -> new ArrayList<String>()).add(word);
 	}
 	
-	for(List<String> a : hmap.values()) {
-		System.out.println(a);
-	}
+	// for(List<String> a : hmap.values()) {
+	// 	System.out.println(a);
+	// }
 	
 	hmap.values().stream().forEach(System.out::println);
 	
